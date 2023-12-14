@@ -10,11 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.0",
+    "@mui/x-date-pickers": "^6.18.4",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.10",
     "express": "^4.18.2",
+    "http": "^0.0.1-security",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "request": "^2.88.2",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "superagent": "^8.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
