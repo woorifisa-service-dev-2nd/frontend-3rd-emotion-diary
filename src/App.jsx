@@ -12,40 +12,18 @@ import dayjs from "dayjs";
 import { icons } from "./constants/icons";
 import ListContainer from "./components/ListContainer";
 import EditorContainer from "./components/EditorContainer";
-
-const dummy = [
-  {
-    id: self.crypto.randomUUID(),
-    date: "2023-12-11",
-    icon: icons[0],
-    title: "제목1",
-    content: "내용1",
-  },
-  {
-    id: self.crypto.randomUUID(),
-    date: "2023-12-12",
-    icon: icons[1],
-    title: "제목2",
-    content: "내용2",
-  },
-  {
-    id: self.crypto.randomUUID(),
-    date: "2023-12-13",
-    icon: icons[2],
-    title: "제목3",
-    content: "내용3",
-  },
-];
+import { DiaryProvider, useDiary } from "./diaryContext";
 
 function App() {
   //currentDiary: 캘린더에서 클릭한 날짜의 일기 데이터
+  const [diaries, dispatch] = useDiary();
   const [currentDiary, setDiary] = useState(undefined);
   const onChangeDate = (e) => {
     let day = dayjs(e.$d).format("YYYY-MM-DD");
     //step 01. 클릭한 날짜를 알아온다.
     //step 02. dummydata에서 클릭한 날짜와 비교한다.
     //step 03. 있으면 setDiary()에 넣어주고 아니면 추가창
-    const findDay = dummy.find((item) => item.date === day);
+    const findDay = diaries.find((item) => item.date === day);
     findDay === undefined
       ? setDiary({
           id: self.crypto.randomUUID(),
@@ -56,7 +34,23 @@ function App() {
         })
       : setDiary(findDay);
   };
+  // const onSave = () => {
+  //   const isNew = dummy.find((item) => item.id === currentDiary.id);
+  //   if (isNew === undefined) {
+  //     dummy.push(currentDiary);
+  //   } else {
+  //     isNew.title = currentDiary.title;
+  //     isNew.content = currentDiary.content;
+  //     isNew.icon = currentDiary.icon;
+  //   }
 
+  //   setDiary(undefined);
+  // };
+  // const onDelete = () => {
+  //   const index = dummy.indexOf(currentDiary);
+  //   dummy.splice(index, 1);
+  //   setDiary(undefined);
+  // };
   return (
     <>
       <DefaultLayouts>
@@ -68,12 +62,14 @@ function App() {
         </LocalizationProvider>
         <div>
           {currentDiary === undefined ? (
-            <ListContainer data={dummy} />
+            <ListContainer />
           ) : (
             <div>
               <EditorContainer
                 currentDiary={currentDiary}
                 setDiary={setDiary}
+                // onSave={onSave}
+                // onDelete={onDelete}
               />
             </div>
           )}

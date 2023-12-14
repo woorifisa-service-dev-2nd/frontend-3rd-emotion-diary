@@ -21,12 +21,12 @@ app.post("/check", (req, res) => {
     `https://mora-bot.kr/api/v1/grammar?string=${checkSentence}`
   );
   // 외부 api서버에 전송
-  HTTP.post(URL)
-    .send(req.body)
+  HTTP.get(URL)
+    .send()
     .set("Content-Type", "application/json")
     .end((error, result) => {
       if (result.statusCode === 200) {
-        response.send(result.body);
+        res.send(result.body);
       } else {
         console.error(error);
       }

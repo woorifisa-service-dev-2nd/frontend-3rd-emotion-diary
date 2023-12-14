@@ -14,7 +14,7 @@ export const checkSentence = async (text) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      return data[0] === undefined ? text : data[0];
+      return data.errnum === 0 ? text : data.suggestions[0];
     })
     .catch((error) => console.log("실패입니다."));
   return result;

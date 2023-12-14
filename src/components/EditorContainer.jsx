@@ -10,8 +10,22 @@ import React from "react";
 import { useEffect } from "react";
 import { checkSentence } from "../api";
 import { icons } from "../constants/icons";
+import { useDiary } from "../diaryContext";
 
 const EditorContainer = ({ currentDiary, setDiary }) => {
+  const [diaries, dispatch] = useDiary();
+  const onSave = () => {
+    if (diaries.find((item) => item.id === currentDiary.id) !== undefined) {
+      dispatch({ type: "UPDATE", newDiary: currentDiary });
+    } else {
+      dispatch({ type: "ADD", newDiary: currentDiary });
+    }
+    setDiary(undefined);
+  };
+  const onDelete = () => {
+    dispatch({ type: "DELETE", id: currentDiary.id });
+    setDiary(undefined);
+  };
   const onChangeTitle = (e) => {
     setDiary({
       ...currentDiary,
@@ -36,7 +50,14 @@ const EditorContainer = ({ currentDiary, setDiary }) => {
     //step 02. checkSentence() 함수의 인자로 위의 텍스트를 넣어서 호출
     //step 03. 받아온 값으로 setDiary() 업데이트
     const result = await checkSentence(currentDiary.content);
-    // console.log(result);
+    console.log(result);
+    setDiary({
+      ...currentDiary,
+      content: result,
+    });
+  };
+  const onCancel = () => {
+    setDiary(undefined);
   };
   return (
     <div>
@@ -73,9 +94,15 @@ const EditorContainer = ({ currentDiary, setDiary }) => {
           })}
         </Select>
       </FormControl>
-      <Button variant="outlined">취소</Button>
-      <Button variant="outlined">저장</Button>
-      <Button variant="outlined">삭제</Button>
+      <Button variant="outlined" onClick={onCancel}>
+        취소
+      </Button>
+      <Button variant="outlined" onClick={onSave}>
+        저장
+      </Button>
+      <Button variant="outlined" onClick={onDelete}>
+        삭제
+      </Button>
       <Button variant="outlined" onClick={onCheck}>
         맞춤법검사
       </Button>
