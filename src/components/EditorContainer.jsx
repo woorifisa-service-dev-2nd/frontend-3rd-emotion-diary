@@ -1,29 +1,26 @@
-import {
-  FormControl,
-  TextField,
-  MenuItem,
-  Select,
-  InputLabel,
-  Button,
-} from "@mui/material";
-import React from "react";
-import { useEffect } from "react";
-import { checkSentence } from "../api";
-import { icons } from "../constants/icons";
-import { useDiary } from "../diaryContext";
+import { TextField, MenuItem, Select, Button } from '@mui/material';
+import React from 'react';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+
+import { checkSentence } from '../api';
+import { icons } from '../constants/icons';
+import { useDiary } from '../diaryContext';
 
 const EditorContainer = ({ currentDiary, setDiary }) => {
   const [diaries, dispatch] = useDiary();
   const onSave = () => {
     if (diaries.find((item) => item.id === currentDiary.id) !== undefined) {
-      dispatch({ type: "UPDATE", newDiary: currentDiary });
+      dispatch({ type: 'UPDATE', newDiary: currentDiary });
     } else {
-      dispatch({ type: "ADD", newDiary: currentDiary });
+      dispatch({ type: 'ADD', newDiary: currentDiary });
     }
     setDiary(undefined);
   };
   const onDelete = () => {
-    dispatch({ type: "DELETE", id: currentDiary.id });
+    dispatch({ type: 'DELETE', id: currentDiary.id });
     setDiary(undefined);
   };
   const onChangeTitle = (e) => {
@@ -60,53 +57,80 @@ const EditorContainer = ({ currentDiary, setDiary }) => {
     setDiary(undefined);
   };
   return (
-    <div>
-      <TextField
-        sx={{ display: "block" }}
-        value={currentDiary.title}
-        id="outlined-basic"
-        placeholder="제목을 입력하세요"
-        variant="outlined"
-        onChange={onChangeTitle}
-      />
-      <TextField
-        id="outlined-multiline-static"
-        multiline
-        placeholder="내용을 입력하세요"
-        rows={4}
-        value={currentDiary.content}
-        onChange={onChangeContent}
-      />
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">감정</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={currentDiary.icon}
-          onChange={onChangeIcon}
-        >
+    <>
+      <div>
+        <TextField
+          sx={{
+            display: 'inline-flex',
+            width: 'calc(100% - 86px)',
+            height: '65px',
+            marginRight: '16px',
+            marginBottom: '16px',
+          }}
+          value={currentDiary.title}
+          id='outlined-basic'
+          placeholder='제목을 입력하세요'
+          variant='outlined'
+          onChange={onChangeTitle}
+        />
+        <Select value={currentDiary.icon} onChange={onChangeIcon} sx={{ width: '70px', height: '60px' }}>
           {icons.map((emoji) => {
             return (
-              <MenuItem key={emoji.name} value={emoji}>
+              <MenuItem key={emoji.name} value={emoji} sx={{ fontSize: '3rem' }}>
                 {emoji.value}
               </MenuItem>
             );
           })}
         </Select>
-      </FormControl>
-      <Button variant="outlined" onClick={onCancel}>
-        취소
-      </Button>
-      <Button variant="outlined" onClick={onSave}>
-        저장
-      </Button>
-      <Button variant="outlined" onClick={onDelete}>
-        삭제
-      </Button>
-      <Button variant="outlined" onClick={onCheck}>
-        맞춤법검사
-      </Button>
-    </div>
+        <TextField
+          sx={{ display: 'block', marginBottom: '16px', width: '100%' }}
+          id='outlined-multiline-static'
+          multiline
+          placeholder='내용을 입력하세요'
+          rows={12}
+          value={currentDiary.content}
+          onChange={onChangeContent}
+        />
+        <div className='flex justify-between'>
+          <Button
+            sx={{ fontSize: '1.5rem' }}
+            variant='outlined'
+            onClick={onCancel}
+            startIcon={<KeyboardBackspaceIcon />}
+            size='large'
+          >
+            취소
+          </Button>
+          <Button
+            sx={{ fontSize: '1.5rem' }}
+            variant='outlined'
+            onClick={onSave}
+            startIcon={<SaveAltIcon />}
+            size='large'
+          >
+            저장
+          </Button>
+          <Button
+            sx={{ fontSize: '1.5rem' }}
+            variant='outlined'
+            onClick={onDelete}
+            startIcon={<DeleteIcon />}
+            size='large'
+          >
+            삭제
+          </Button>
+          <Button
+            sx={{ fontSize: '1.5rem' }}
+            variant='outlined'
+            onClick={onCheck}
+            startIcon={<CheckCircleIcon />}
+            size='large'
+          >
+            맞춤법검사
+          </Button>
+        </div>
+      </div>
+    </>
   );
 };
 

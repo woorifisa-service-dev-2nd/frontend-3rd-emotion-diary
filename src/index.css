@@ -6,9 +6,97 @@ body,
   margin: 0;
   padding: 0;
   max-width: none;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
 }
 
 .flex {
   display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.list-or-editor {
+  width: 50%;
+  height: 100%;
+  padding: 36px;
+}
+
+.item-card {
+  margin-bottom: 36px;
+}
+
+.css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel {
+  width: 100% !important;
+  font-size: 3rem !important;
+}
+
+.css-kg9q0s-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button,
+.css-1nkg345-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button,
+.css-dplwbx-MuiPickersCalendarHeader-label {
+  font-size: 3.5rem !important;
+}
+
+.css-1tkx1wf-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon,
+.css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+  display: none !important;
+}
+
+.css-nk89i7-MuiPickersCalendarHeader-root {
+  margin-bottom: 36px !important;
+  max-height: none !important;
+}
+
+.css-168nijn-MuiPickersDay-root,
+.css-1u23akw-MuiButtonBase-root-MuiPickersDay-root,
+.css-jgls56-MuiButtonBase-root-MuiPickersDay-root {
+  font-size: 2rem !important;
+  width: 88px !important;
+  height: 88px !important;
+}
+
+.css-1t0788u-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition {
+  overflow: visible !important;
+}
+
+.css-144dnr3-MuiBadge-badge,
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  font-size: 2rem !important;
+  padding: 0 !important;
+  height: 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.css-jgls56-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
+  border: 4px solid #1976d2 !important;
+}
+
+.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon {
+  display: none !important;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  height: 27px !important;
+  font-size: 2rem !important;
+}
+
+.css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
+  width: 100% !important;
+  font-size: 2rem !important;
+  min-height: 600px !important;
+}
+
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+  top: 100px !important;
+  left: 1355px !important;
+  width: 70px !important;
+}
+
+.css-1rndcnw-MuiButtonBase-root-MuiMenuItem-root {
+  padding-left: 12px !important;
+  padding-bottom: 0 !important;
 }
