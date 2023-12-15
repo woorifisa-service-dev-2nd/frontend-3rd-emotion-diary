@@ -104,7 +104,7 @@ export const dateSort = (dateList) => {
 
 step 01. date 빼기 연산은 문자열이라서 NaN이 나왔다. <br>
 step 02. 그래서 sort(a,b) 함수를 사용해서 a.date와 b.date의 대소 비교를 했다. 그런데 true, false로 리턴한다. <br>
-step 03. sort() 함수는 리턴값이 음수인지 아닌지를 기준으로 정렬하기 때문에 a.date > b.date 라면 1을, 아니라면 -1을 줘서 정렬 기준을 맞춘다.
+step 03. sort(a,b) 함수는 리턴값이 음수이면 a를 앞에 두고, 양수이면 b를 앞에 둔다. 따라서 a.date > b.date 라면 1을, 아니라면 -1을 줘서 정렬 기준을 맞춘다.
 
 ### 2. 맞춤법 검사<br>
 
