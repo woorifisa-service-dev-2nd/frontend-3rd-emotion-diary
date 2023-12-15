@@ -1,18 +1,14 @@
-import dayjs from 'dayjs';
-import React from 'react';
-import { useDiary } from '../diaryContext';
-import ListItems from './ListItems';
+import React from "react";
+import { useDiary } from "../diaryContext";
+import ListItems from "./ListItems";
+import { dateSort } from "../utils";
 
 const ListContainer = () => {
   const [diaries] = useDiary();
 
-  return diaries
-    .sort((a, b) => {
-      return dayjs(a.date) - dayjs(b.date);
-    })
-    .map((item) => {
-      return <ListItems key={item.id} item={item} />;
-    });
+  return dateSort(diaries).map((item) => {
+    return <ListItems key={item.id} item={item} />;
+  });
 };
 
 export default ListContainer;

@@ -43,16 +43,11 @@ const reducer = (diaries, action) => {
   switch (action.type) {
     case "ADD":
       return [...diaries, action.newDiary];
-
     case "DELETE":
-      //   const index = diaries.indexOf(currentDiary);
-      //   diaries.splice(index, 1);
-      //   return diaries;
       return diaries.filter((item) => item.id !== action.id);
     case "UPDATE":
       return diaries.map((item) => {
         if (item.id === action.newDiary.id) {
-          console.log("id가 같음");
           return {
             ...item,
             title: action.newDiary.title,
@@ -60,8 +55,6 @@ const reducer = (diaries, action) => {
             icon: action.newDiary.icon,
           };
         } else {
-          console.log("id가 다름");
-
           return item;
         }
       });

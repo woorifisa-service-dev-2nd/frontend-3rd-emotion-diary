@@ -6,7 +6,7 @@ body,
   margin: 0;
   padding: 0;
   max-width: none;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   box-sizing: border-box;
 }
 
@@ -20,7 +20,7 @@ body,
 
 .list-or-editor {
   width: 50%;
-  height: 100%;
+  min-width: 650px;
   padding: 36px;
 }
 
@@ -63,7 +63,7 @@ body,
 
 .css-144dnr3-MuiBadge-badge,
 .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-  font-size: 2rem !important;
+  font-size: 1.5rem !important;
   padding: 0 !important;
   height: 20px !important;
   display: flex;
@@ -91,12 +91,11 @@ body,
 }
 
 .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
-  top: 100px !important;
-  left: 1355px !important;
   width: 70px !important;
 }
 
 .css-1rndcnw-MuiButtonBase-root-MuiMenuItem-root {
   padding-left: 12px !important;
   padding-bottom: 0 !important;
+  font-size: 2rem !important;
 }
