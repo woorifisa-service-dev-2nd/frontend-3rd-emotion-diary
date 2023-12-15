@@ -2,21 +2,18 @@
 
 ![header](https://capsule-render.vercel.app/api?type=shark&color=auto&height=250&section=header&text=Emotion%20Diary&fontSize=70&animation=scaleIn)
 
-## 💻 활용 기술
+## 👩‍💻 활용 기술
 
-<div style="display:flex; flex-wrap:wrap;" align="center">
-  <img style="margin-right:1rem" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-  <img style="margin-right:1rem" src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-   <img style="margin-right:1rem" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
-  <img style="margin-right:1rem" src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
-    <img style="margin-right:1rem" src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
-</div>
-
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shiel ds.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-## 주제 및 팀원 소개
+## 😌 주제 및 팀원 소개
 
-✏️ 이모티콘으로 그날의 감정과 일기를 기록해보세요!
+이모티콘으로 그날의 감정과 일기를 기록해보세요!
 
 👱:‍ 나경률<br/>
 👩:‍ 조명하
@@ -29,19 +26,19 @@
 2. 날짜 커스터마이징이 가능하다.
 3. 디자인이 심플하다.
 
-## 기능 시연
+## 🧑‍🔧 기능 시연
 
-1. 캘린더 날짜 선택<br/>
-   1.1 이미 일기 쓴 날
+1. 이미 일기 쓴 날
 
-- 취소 버튼
-- 일기 편집 : 제목, 내용, 이모티콘 수정
-- 일기 삭제
-  1.2 아직 일기 안 쓴 날
-- 일기 추가
-- 맞춤법 검사
+   - 취소 버튼
+   - 일기 편집 : 제목, 내용, 이모티콘 수정
+   - 일기 삭제<br>
 
-## 구현 설명
+2. 아직 일기 안 쓴 날
+   - 일기 추가
+   - 맞춤법 검사
+
+## 👩‍🏫 구현 설명
 
 ### 1. CustomButton 컴포넌트
 
