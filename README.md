@@ -2,7 +2,7 @@
 
 ![header](https://capsule-render.vercel.app/api?type=shark&color=auto&height=250&section=header&text=Emotion%20Diary&fontSize=70&animation=scaleIn)
 
-## 👩‍💻 활용 기술
+## 💻 활용 기술
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
